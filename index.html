@@ -2,91 +2,189 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Static Website Hosting with CI/CD</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Static Website Hosting with CI/CD | DevOps Project</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
-            font-family: 'Segoe UI', Arial, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 20px;
+            font-family: 'Segoe UI', system-ui, sans-serif;
+            background: #0f172a;
+            color: #e2e8f0;
+            line-height: 1.6;
         }
-        .container {
-            background: white;
-            border-radius: 16px;
-            padding: 50px;
-            max-width: 700px;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        header {
+            background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+            padding: 60px 20px;
             text-align: center;
+            border-bottom: 1px solid #334155;
         }
-        h1 {
-            color: #333;
-            font-size: 2.2em;
+        header h1 {
+            font-size: 2.5em;
+            color: #ffffff;
             margin-bottom: 10px;
         }
-        .subtitle {
-            color: #764ba2;
-            font-weight: 600;
-            margin-bottom: 30px;
+        header p {
+            color: #94a3b8;
+            font-size: 1.1em;
+            max-width: 600px;
+            margin: 0 auto;
         }
-        .info-box {
-            background: #f8f9fa;
-            border-left: 4px solid #764ba2;
-            padding: 20px;
-            margin: 20px 0;
-            text-align: left;
-            border-radius: 8px;
-        }
-        .info-box p { margin: 8px 0; color: #555; }
-        .badge {
+        .status {
             display: inline-block;
-            background: #28a745;
+            background: #16a34a;
             color: white;
-            padding: 6px 16px;
+            padding: 6px 18px;
             border-radius: 20px;
-            font-size: 0.9em;
+            font-size: 0.85em;
+            font-weight: 600;
             margin-top: 20px;
         }
-        .tech-stack {
-            display: flex;
-            gap: 10px;
-            justify-content: center;
-            flex-wrap: wrap;
-            margin-top: 25px;
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 50px 20px;
         }
-        .tech {
-            background: #667eea;
-            color: white;
-            padding: 8px 16px;
+        .section {
+            margin-bottom: 45px;
+        }
+        .section h2 {
+            font-size: 1.4em;
+            color: #60a5fa;
+            margin-bottom: 18px;
+            border-left: 4px solid #60a5fa;
+            padding-left: 12px;
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 16px;
+        }
+        .card {
+            background: #1e293b;
+            border: 1px solid #334155;
+            border-radius: 10px;
+            padding: 20px;
+        }
+        .card h3 {
+            color: #f1f5f9;
+            font-size: 1em;
+            margin-bottom: 6px;
+        }
+        .card p {
+            color: #94a3b8;
+            font-size: 0.9em;
+        }
+        .flow {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            align-items: center;
+            justify-content: center;
+            background: #1e293b;
+            border: 1px solid #334155;
+            border-radius: 10px;
+            padding: 25px;
+        }
+        .flow-step {
+            background: #0f172a;
+            border: 1px solid #475569;
+            padding: 10px 16px;
+            border-radius: 8px;
+            font-size: 0.9em;
+            color: #e2e8f0;
+        }
+        .arrow { color: #60a5fa; font-size: 1.2em; }
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .tag {
+            background: #1e3a8a;
+            color: #bfdbfe;
+            padding: 6px 14px;
             border-radius: 6px;
             font-size: 0.85em;
+        }
+        footer {
+            text-align: center;
+            padding: 30px;
+            color: #64748b;
+            font-size: 0.85em;
+            border-top: 1px solid #334155;
         }
     </style>
 </head>
 <body>
+
+    <header>
+        <h1>Static Website Hosting with CI/CD</h1>
+        <p>End-to-end DevOps pipeline: automated build, version control, and deployment using GitHub Actions and a self-hosted runner.</p>
+        <span class="status">● Live — Deployed via CI/CD Pipeline</span>
+    </header>
+
     <div class="container">
-        <h1>🚀 Static Website Hosting with CI/CD</h1>
-        <p class="subtitle">A DevOps Mini Project</p>
 
-        <div class="info-box">
-            <p><strong>Hosting:</strong> Nginx on Ubuntu VM (VirtualBox)</p>
-            <p><strong>Version Control:</strong> Git + GitHub</p>
-            <p><strong>CI/CD:</strong> GitHub Actions with Self-Hosted Runner</p>
-            <p><strong>Deployment:</strong> Fully Automated</p>
+        <div class="section">
+            <h2>Project Overview</h2>
+            <p style="color:#cbd5e1;">This project demonstrates a complete CI/CD workflow for static website deployment. A local Ubuntu virtual machine hosts an Nginx web server, connected to a GitHub repository through a self-hosted GitHub Actions runner. Every code change pushed to the main branch is automatically deployed — no manual intervention required.</p>
         </div>
 
-        <div class="tech-stack">
-            <span class="tech">Ubuntu</span>
-            <span class="tech">Nginx</span>
-            <span class="tech">Git</span>
-            <span class="tech">GitHub Actions</span>
+        <div class="section">
+            <h2>Architecture &amp; Deployment Flow</h2>
+            <div class="flow">
+                <div class="flow-step">Code Edit</div>
+                <span class="arrow">→</span>
+                <div class="flow-step">Git Push</div>
+                <span class="arrow">→</span>
+                <div class="flow-step">GitHub Actions Trigger</div>
+                <span class="arrow">→</span>
+                <div class="flow-step">Self-Hosted Runner</div>
+                <span class="arrow">→</span>
+                <div class="flow-step">Nginx Deployment</div>
+            </div>
         </div>
 
-        <p class="badge">✅ Deployed Automatically via CI/CD Pipeline</p>
+        <div class="section">
+            <h2>Key Components</h2>
+            <div class="grid">
+                <div class="card">
+                    <h3>Virtualization</h3>
+                    <p>Ubuntu 26.04 VM on VirtualBox, configured with Bridged Networking for LAN accessibility.</p>
+                </div>
+                <div class="card">
+                    <h3>Web Server</h3>
+                    <p>Nginx serving static content from /var/www/html, managed via systemd.</p>
+                </div>
+                <div class="card">
+                    <h3>Version Control</h3>
+                    <p>Git + GitHub repository tracking all source changes with authenticated push access.</p>
+                </div>
+                <div class="card">
+                    <h3>CI/CD Automation</h3>
+                    <p>GitHub Actions workflow triggered on push, executed by a self-hosted runner on the VM.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Tech Stack</h2>
+            <div class="tags">
+                <span class="tag">Ubuntu Linux</span>
+                <span class="tag">VirtualBox</span>
+                <span class="tag">Nginx</span>
+                <span class="tag">Git</span>
+                <span class="tag">GitHub Actions</span>
+                <span class="tag">Bash Scripting</span>
+                <span class="tag">CI/CD</span>
+            </div>
+        </div>
+
     </div>
+
+    <footer>
+        Built &amp; deployed by Hareni · Static Website Hosting with CI/CD
+    </footer>
+
 </body>
 </html>
-
